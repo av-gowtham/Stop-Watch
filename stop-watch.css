@@ -72,8 +72,11 @@ h1{
 
 .js-lap:hover{
   background-color: #4387d0;
-  margin-top: 10px;
   color:white;
+}
+
+.js-lap{
+  margin-top:10px;
 }
 
 .lap{
