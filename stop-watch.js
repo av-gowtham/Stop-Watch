@@ -51,6 +51,9 @@ function stopWatch(){
     lap();
     "class="js-lap button">lap</button>
     <div class="list"></div>`;
+    startElement.addEventListener('click', () => {
+      updateLaps();
+    })
 
   } else {
     clearInterval(intervalID);
