@@ -50,10 +50,12 @@ h1{
 
 .reset:hover{
   background-color: rgb(180, 0, 0);
+  color: white;
 }
 
 .stop{
   background-color: rgb(180, 0, 0);
+  color: white;
 }
 
 .laps-para{
@@ -71,6 +73,7 @@ h1{
 .js-lap:hover{
   background-color: #4387d0;
   margin-top: 10px;
+  color:white;
 }
 
 .lap{
