@@ -17,7 +17,15 @@ const lapDivElement = document.querySelector('.lap');
 function stopWatch(){
   if(!isStopWatchIsOn){
     intervalID = setInterval(() => {
-      if(milliseconds === 100){
+      updateTime();
+    }, 10);
+
+    startElement.addEventListener('click', () => {
+      updateLaps();
+    })
+
+function updateTime(){
+  if(milliseconds === 100){
         if(seconds === 60){
           if(minutes === 60){
 
@@ -36,21 +44,18 @@ function stopWatch(){
         
         
         secondsElement.innerHTML = seconds == 60? `00s` : seconds < 10? `0${seconds}s` : `${seconds}s`;
-        console.log(`${seconds}-seconds`);
+        // console.log(`${seconds}-seconds`);
         seconds++;
         milliseconds = 0;
         millisecondsElement.innerHTML = milliseconds;
       }
 
       milliseconds++;
-      console.log(milliseconds)
+      //console.log(milliseconds)
       millisecondsElement.innerHTML = milliseconds == 100? `00` : milliseconds < 10? `0${milliseconds}` : milliseconds ;
       isStopWatchIsOn = true;
-    }, 10);
-
-    startElement.addEventListener('click', () => {
-      updateLaps();
-    })
+}
+    
     startElement.innerHTML ='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-timer"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></svg><p >Pause</p>';
     startElement.classList.add('pause');
     resetElement.classList.add('reset');
