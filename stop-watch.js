@@ -22,7 +22,23 @@ function stopWatch(){
 
     startElement.addEventListener('click', () => {
       updateLaps();
-    })
+    })    
+    startElement.innerHTML ='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-timer"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></svg><p >Pause</p>';
+    startElement.classList.add('pause');
+    resetElement.classList.add('reset');
+    lapDivElement.innerHTML = `<button onclick="
+    lap();
+    "class="js-lap lap-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hourglass"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg> Lap</button>
+    <div class="list"></div>`;
+
+  } else {
+    clearInterval(intervalID);
+    isStopWatchIsOn = false;
+    startElement.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-timer"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></svg><p >Start</p>';
+    startElement.classList.remove('pause');
+  }
+
+}
 
 function updateTime(){
   if(milliseconds === 100){
@@ -55,23 +71,7 @@ function updateTime(){
       millisecondsElement.innerHTML = milliseconds == 100? `00` : milliseconds < 10? `0${milliseconds}` : milliseconds ;
       isStopWatchIsOn = true;
 }
-    
-    startElement.innerHTML ='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-timer"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></svg><p >Pause</p>';
-    startElement.classList.add('pause');
-    resetElement.classList.add('reset');
-    lapDivElement.innerHTML = `<button onclick="
-    lap();
-    "class="js-lap lap-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hourglass"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg> Lap</button>
-    <div class="list"></div>`;
 
-  } else {
-    clearInterval(intervalID);
-    isStopWatchIsOn = false;
-    startElement.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-timer"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></svg><p >Start</p>';
-    startElement.classList.remove('pause');
-  }
-
-}
 
 startElement.addEventListener('click', () => {
     stopWatch();
