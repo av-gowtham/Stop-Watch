@@ -36,14 +36,14 @@ function stopWatch(){
         
         
         secondsElement.innerHTML = seconds == 60? `00s` : seconds < 10? `0${seconds}s` : `${seconds}s`;
-        // console.log(`${seconds}-seconds`);
+        console.log(`${seconds}-seconds`);
         seconds++;
         milliseconds = 0;
         millisecondsElement.innerHTML = milliseconds;
       }
 
       milliseconds++;
-      // console.log(milliseconds)
+      console.log(milliseconds)
       millisecondsElement.innerHTML = milliseconds == 100? `00` : milliseconds < 10? `0${milliseconds}` : milliseconds ;
       isStopWatchIsOn = true;
     }, 10);
