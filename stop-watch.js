@@ -107,7 +107,7 @@ function updateLaps(){
     lapsCount++;
 
     const addList = `
-      <div class="laps-para"> ${lapsCount}.  ${hour}h : ${minute}m : ${second}s : ${millisecond} </div>`;
+      <div class="laps-para"> ${lapsCount}.  ${hour}h : ${minute}m : ${second-1}s : ${millisecond} </div>`;
     
       lapsHTML += addList;
   });
