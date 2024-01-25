@@ -1,0 +1,105 @@
+body{
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  color : #191919;
+  display: flex;
+  justify-content: center;
+}
+
+h1{
+  font-family: 'Poppins', sans-serif;
+  margin: 0px;
+  text-align: center;
+  font-size: 45px;
+}
+
+.display{
+  display: flex;
+  gap: 1vh;
+}
+
+.time-display{
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  background-color: #191919;
+  padding: 5px;
+  color: #ffffff;
+  border-radius: 50vh;
+}
+
+.button{
+  width: 150px;
+  height: 60px;
+  background-color: #e88915;
+  border-width: 5px;
+  border: none;
+  border-radius: 50vh;
+}
+
+.btn{
+  display: flex;
+  gap : 1vh;
+  justify-content: center;
+}
+
+.laps-para{
+  font-size: 30px;
+  background-color: #7e7e7e;
+  color: #ffffff;
+  margin-top: 1vh;
+  display: flex;
+  justify-content: center;
+  padding: 1vh;
+  border-radius: 3vh;
+  width: 300px;
+}
+
+.reset:hover{
+  background-color: #b40000;
+  color: #ffffff;
+}
+
+.pause:hover{
+  color: white;
+  background-color: #b40000;
+}
+
+
+.lap{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.lap-button{
+  width: 150px;
+  height: 60px;
+  font-size: 2rem;
+  padding: 5px;
+  background-color: #e6e6e6;
+  border: none;
+  border-radius: 50vh;
+  margin-bottom: 10px;
+}
+
+.lap-button:hover{
+  background-color: #4387d0;
+  color: white;
+  
+}
+
+.js-start,
+.js-reset{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 30px;
+  padding: 0px;
+  }
